@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Invitación Dama de Honor</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --verde-principal: #2f5d50;
@@ -16,7 +17,8 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-  background: var(--verde-suave);
+  background: url("fondo.jpg") no-repeat center center fixed;
+  background-size: cover;
   font-family: 'Inter', sans-serif;
   height:100vh;
   display:flex;
@@ -55,14 +57,14 @@ body {
 /* CARTA */
 .letter {
   position: absolute;
-  width: 400px; /* más grande */
+  width: 400px;
   max-width: 90vw;
   height: auto;
-  background: var(--blanco);
+  background: rgba(47, 93, 80, 0.9);
   border-radius: 14px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, 50%) scale(0.7); /* empieza pequeña y baja */
+  transform: translate(-50%, 50%) scale(0.7);
   padding: 40px;
   text-align: center;
   opacity: 0;
@@ -75,14 +77,14 @@ body {
 .letter h1 {
   font-family: 'Playfair Display', serif;
   font-size: 32px;
-  color: var(--verde-principal);
+  color: white;
   margin-bottom: 20px;
 }
 
 .letter p {
   font-size: 18px;
   line-height: 1.7;
-  color: var(--verde-oscuro);
+  color: white;
   margin-bottom: 15px;
 }
 
@@ -90,6 +92,7 @@ body {
   font-size: 24px;
   margin: 20px 0;
   font-weight: 500;
+  color: white;
 }
 
 .buttons {
@@ -107,26 +110,33 @@ button {
 }
 
 .btn-si {
-  background: var(--verde-principal);
-  color: white;
-}
-
-.btn-si:hover { background: var(--verde-oscuro); }
-
-.btn-abrazo {
-  background: transparent;
-  border: 1px solid var(--verde-principal);
+  background: white;
   color: var(--verde-principal);
 }
 
-.btn-abrazo:hover { background: var(--verde-suave); }
+.btn-si:hover { 
+  background: var(--verde-suave); 
+}
+
+.btn-abrazo {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.btn-abrazo:hover { 
+  background: rgba(255,255,255,0.2); 
+}
 
 /* Animaciones */
-.scene.open .flap { transform: rotateX(180deg); box-shadow: none; }
+.scene.open .flap { 
+  transform: rotateX(180deg); 
+  box-shadow: none; 
+}
 
 .scene.open .letter {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1); /* carta centrada y grande */
+  transform: translate(-50%, -50%) scale(1);
   pointer-events: auto;
 }
 
